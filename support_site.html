@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stovetop Support</title>
+  <meta name="description" content="Support page for the Stovetop app." />
+  <style>
+    :root {
+      --bg: #fffaf5;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #f97316;
+      --accent-dark: #ea580c;
+      --border: #fed7aa;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --radius: 20px;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #fff7ed 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 64px 0 32px;
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 40px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ffedd5;
+      color: var(--accent-dark);
+      border: 1px solid #fdba74;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      letter-spacing: -0.03em;
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      margin-bottom: 14px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .hero p {
+      max-width: 760px;
+      font-size: 1.08rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: #fdba74;
+      background: #fff7ed;
+    }
+
+    main {
+      padding: 8px 0 64px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      grid-column: span 12;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .card.half {
+      grid-column: span 6;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .faq-item + .faq-item {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid #ffedd5;
+    }
+
+    .faq-item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .email {
+      color: var(--accent-dark);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 0 0 48px;
+    }
+
+    .footer-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      box-shadow: var(--shadow);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 800px) {
+      .hero, .card {
+        padding: 24px;
+      }
+
+      .card.half {
+        grid-column: span 12;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <section class="hero">
+        <div class="badge">Stovetop Support</div>
+        <h1>Help for Stovetop</h1>
+        <p>
+          Welcome to the official support page for Stovetop. If you have questions,
+          run into a bug, need help with recipes or account features, or want to report an issue,
+          this page is the best place to get support.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:support@stovetopapp.com">Contact Support</a>
+          <a class="btn btn-secondary" href="#faq">View FAQs</a>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="grid">
+        <section class="card half">
+          <h2>Contact</h2>
+          <p>
+            For help with the app, email us at
+            <a class="email" href="mailto:support@stovetopapp.com">support@stovetopapp.com</a>.
+          </p>
+          <p>
+            When possible, include your device type, iOS version, and a short description of the issue so we can help faster.
+          </p>
+        </section>
+
+        <section class="card half">
+          <h2>What we can help with</h2>
+          <ul>
+            <li>Recipe saving and organization issues</li>
+            <li>App crashes or loading problems</li>
+            <li>Account and sign-in questions</li>
+            <li>Feature requests and feedback</li>
+            <li>Bug reports and usability issues</li>
+          </ul>
+        </section>
+
+        <section class="card" id="faq">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>How do I report a bug?</h3>
+            <p>
+              Send an email to support with a short description of what happened, what device you were using,
+              and any screenshots that may help explain the issue.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How do I suggest a feature?</h3>
+            <p>
+              We welcome feedback. Email us with your idea and how you would use the feature in Stovetop.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What if a recipe is not saving correctly?</h3>
+            <p>
+              First, make sure you are on the latest version of the app. If the issue continues, contact support
+              with the recipe details and what happened when you tried to save it.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Do you offer support for account issues?</h3>
+            <p>
+              Yes. For account-related help, contact support and include the email address associated with your account.
+            </p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Response time</h2>
+          <p>
+            We aim to respond to support requests as quickly as possible. Most inquiries receive a response within 1–3 business days.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-card">
+        <div>© 2026 Stovetop. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="mailto:support@stovetopapp.com">Support</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
