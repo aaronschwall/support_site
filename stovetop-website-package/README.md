@@ -26,7 +26,7 @@ Use these URLs in App Store Connect:
 
 ## Important customizations before publishing
 Replace these placeholders:
-- `support@stovetopapp.com` with your real support email
+- `support@stovetoprecipes.com` with your real support email (if different)
 - `Stovetop` / legal business information if needed
 - Any privacy policy language so it matches your actual data practices
 
