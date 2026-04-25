@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Stovetop</title>
+  <meta name="description" content="Learn how each part of the Stovetop app works." />
+  <style>
+    :root {
+      --bg: #fffaf5;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #f97316;
+      --accent-dark: #ea580c;
+      --border: #fed7aa;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --radius: 20px;
+      --max: 1020px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #fff7ed 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+    header { padding: 56px 0 28px; }
+    .hero, .card { background: var(--card); border: 1px solid var(--border); border-radius: 28px; box-shadow: var(--shadow); }
+    .hero { padding: 38px; }
+    .badge {
+      display: inline-block; background: #ffedd5; color: var(--accent-dark); border: 1px solid #fdba74;
+      border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 600; margin-bottom: 18px;
+    }
+    h1, h2, h3 { line-height: 1.15; margin: 0 0 12px; }
+    h1 { font-size: clamp(2.1rem, 5vw, 3.6rem); letter-spacing: -0.03em; }
+    h2 { font-size: clamp(1.3rem, 3vw, 1.9rem); }
+    h3 { font-size: 1.05rem; }
+    p { margin: 0 0 14px; color: var(--muted); font-size: 1.01rem; }
+    .hero p { max-width: 760px; font-size: 1.07rem; }
+    .actions, .toc { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .btn, .toc a {
+      display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 14px;
+      text-decoration: none; font-weight: 600; transition: 0.2s ease; border: 1px solid transparent;
+    }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-secondary, .toc a { background: white; color: var(--text); border-color: var(--border); }
+    .btn-secondary:hover, .toc a:hover { border-color: #fdba74; background: #fff7ed; }
+    main { padding: 8px 0 64px; }
+    .stack { display: grid; gap: 20px; }
+    .card { padding: 28px; }
+    .feature-list, .tip-list { margin: 12px 0 0; padding-left: 18px; color: var(--muted); }
+    .feature-list li + li, .tip-list li + li { margin-top: 8px; }
+    .mini {
+      display: inline-block; margin-bottom: 10px; padding: 6px 10px; border-radius: 999px; background: #fff7ed;
+      color: var(--accent-dark); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.01em;
+    }
+    .footer-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 18px 22px; display: flex;
+      flex-wrap: wrap; justify-content: space-between; gap: 12px; color: var(--muted); box-shadow: var(--shadow);
+    }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .footer-links a { color: var(--accent-dark); text-decoration: none; font-weight: 600; }
+    @media (max-width: 800px) { .hero, .card { padding: 24px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <section class="hero">
+        <div class="badge">Learn Stovetop</div>
+        <h1>How each part of the app works</h1>
+        <p>
+          This guide walks through every main section of Stovetop so users can understand where recipes live,
+          how Inventory and Lists differ, how AI recipe generation works, and how to use import, source links,
+          categories, and merge features.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="support_site.html">Back to Support</a>
+          <a class="btn btn-secondary" href="mailto:support@stovetoprecipes.com">Contact Support</a>
+        </div>
+        <div class="toc">
+          <a href="#recipes">Recipes</a>
+          <a href="#inventory">Inventory</a>
+          <a href="#lists">Lists</a>
+          <a href="#ai">AI Recipes</a>
+          <a href="#importing">Importing</a>
+          <a href="#tips">Tips</a>
+        </div>
+      </section>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="stack">
+        <section class="card" id="recipes">
+          <div class="mini">Recipes Tab</div>
+          <h2>Recipes</h2>
+          <p>The Recipes tab is the main home for saved recipes. Users can browse, search, filter by category, favorite recipes, and open a full recipe view with ingredients, cooking steps, and source attribution.</p>
+          <ul class="feature-list">
+            <li>Add recipes manually with title, category, ingredients, instructions, and optional image.</li>
+            <li>Import recipes from a website by pasting a URL and fetching structured recipe data.</li>
+            <li>Filter recipes by category with the category bar and use sort/filter controls for faster browsing.</li>
+            <li>Mark recipes as favorites and view cooking progress step by step.</li>
+            <li>Open source attribution links when the recipe came from a website.</li>
+            <li>Merge multiple saved recipes into one coordinated recipe flow.</li>
+          </ul>
+        </section>
+        <section class="card" id="inventory">
+          <div class="mini">Inventory Tab</div>
+          <h2>Inventory</h2>
+          <p>Inventory tracks what the user already has on hand. This helps Stovetop determine what recipes are possible and what items still need to be added to a shopping list.</p>
+          <ul class="feature-list">
+            <li>Add pantry items quickly with a name and quantity.</li>
+            <li>Search stored items and remove inventory entries you no longer have.</li>
+            <li>Use inventory quantities to estimate whether recipe ingredients are already covered.</li>
+            <li>Support quantity-aware recipe suggestions and smarter shopping list generation.</li>
+          </ul>
+        </section>
+        <section class="card" id="lists">
+          <div class="mini">Lists Tab</div>
+          <h2>Lists</h2>
+          <p>Lists are for shopping and planning. Users can keep multiple lists, quickly add items, complete items, move items between lists, and send recipe ingredients to the main list.</p>
+          <ul class="feature-list">
+            <li>Create multiple lists and switch between them.</li>
+            <li>Add items with quick entry at the bottom of the list.</li>
+            <li>Mark items complete, clear completed items, or clear a whole list.</li>
+            <li>Move completed shopping items into Inventory when appropriate.</li>
+            <li>Add missing recipe ingredients directly from a recipe page.</li>
+          </ul>
+        </section>
+        <section class="card" id="ai">
+          <div class="mini">AI Recipes Tab</div>
+          <h2>AI Recipes</h2>
+          <p>The AI Recipes tab lets users ask for meal ideas, substitutions, and fully structured recipes. AI-generated recipes can be added directly into the main recipe collection.</p>
+          <ul class="feature-list">
+            <li>Use OpenAI or Claude from the AI settings screen.</li>
+            <li>Pick a model, paste an API key, and start chatting with the built-in recipe assistant.</li>
+            <li>Generate recipe ideas from available pantry items or general prompts.</li>
+            <li>Review AI-generated recipe cards and save them directly into Recipes.</li>
+            <li>Saved AI recipes keep their own source attribution so users know they were AI generated.</li>
+          </ul>
+        </section>
+        <section class="card" id="importing">
+          <div class="mini">Import & Organization</div>
+          <h2>Importing, categories, and source tracking</h2>
+          <p>Stovetop supports both manual recipe entry and website imports. It also lets users manage categories so the recipe library stays organized in a way that matches how they cook.</p>
+          <ul class="feature-list">
+            <li>Paste and fetch a recipe URL directly from the add recipe screen.</li>
+            <li>Imported website recipes store both the site name and the original link.</li>
+            <li>Create, remove, and manage custom recipe categories from the Recipes screen.</li>
+            <li>See a recipe's source discreetly in the recipe header.</li>
+            <li>Edit saved recipes later to update ingredients, instructions, category, or source metadata.</li>
+          </ul>
+        </section>
+        <section class="card" id="tips">
+          <div class="mini">Tips</div>
+          <h2>Helpful ways to use the app</h2>
+          <ul class="tip-list">
+            <li>Keep Inventory up to date so recipe availability and shopping suggestions stay accurate.</li>
+            <li>Use categories to group recipes by meal type or however the user naturally organizes cooking.</li>
+            <li>Use Favorites for repeat meals and best-performing recipes.</li>
+            <li>Import recipes from websites when possible so source links remain available later.</li>
+            <li>Use AI to brainstorm, then save only the recipes worth keeping in the main library.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer-card">
+        <div>© 2026 Stovetop. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="support_site.html">Support</a>
+          <a href="learn.html">Learn</a>
+          <a href="mailto:support@stovetoprecipes.com">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
